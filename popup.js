@@ -1,35 +1,46 @@
-function setFont() {
-    fontStylesheet = $('link');
-    fontStylesheet.attr('href', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-    fontStylesheet.attr('rel', 'stylesheet');
-    $('h1').css("font-family", "Roboto");
+function loadMaterializeCSS() {
+    /* 
+    Materialize: CSS-Framework für App GUIs 
+    https://materializecss.com
+    */
+
+    // CSS
+    materialStylesheet = $('link');
+    materialStylesheet.attr('rel', 'stylesheet');
+    materialStylesheet.attr('href', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
+    $('head').append(materialStylesheet);
+    
+    // JavaScript
+    materialScripts = $('script');
+    materialScripts.attr('src', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
+    $('body').append(materialScripts);
 }
 
-function runDummyCode() {
-    const txt1 = "<h1>Abboniere unsere Social Media Kanäle</h1>";               // Create element with HTML      
-    const txt2 = $("<p></p>").text("Text.");   // Create with jQuery     var txt3 = document.createElement("p");  // Create with DOM
-    $("body").append(txt1, txt2);      // Append the new elements 
-}
 
 function setTimer() {
     // TODO: Timer implementieren
 }
 
-function createPopUpWindow() {
-    popUpWindow = $('div');
-    popUpWindow.attr('id', 'icf-social-media-popup');
-    popUpWindow.css('width', '180rem')
+function createContainer() {
+    const container = $('div')
+    container.attr('class', 'container')
+    $('body').append(container);
 }
 
 function createPopUp() {
-    createPopUpWindow()
+    popUpWindow = $('div');
+    popUpWindow.attr('class', 'card');
+    popUpWindow.css('width', '180rem')
+
+    content = $('p')
+    const contentString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    content.text(contentString)
+    popUpWindow.append()
 }
 
-function runPopUp() {}
-
 function main() {
-    runDummyCode()
-    setFont()
+    loadMaterializeCSS()
+    createContainer()
 }
 
 main()
