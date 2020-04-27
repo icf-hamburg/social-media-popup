@@ -89,7 +89,7 @@ function createText() {
     $(text).appendTo(modalWindow);
 }
 
-setTimeout(openModal, 60000); // nach einer Minute
+setTimeout(openModal, 5000);
 
 createIcon('icons/facebook.svg', 'https://www.facebook.com/icfhamburg/');
 createIcon('icons/instagram.svg', 'https://www.instagram.com/icfhamburg/');
