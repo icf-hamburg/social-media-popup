@@ -1,46 +1,26 @@
-function loadMaterializeCSS() {
-    /* 
-    Materialize: CSS-Framework für App GUIs 
-    https://materializecss.com
-    */
+var modal = $('<div></div>');
+modal.attr('class', 'modal-background');
+modal.attr('style', `
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+position: absolute;
+top:0;
+display:flex;
+justify-content: center;
+align-items: center;
+`);
 
-    // CSS
-    materialStylesheet = $('link');
-    materialStylesheet.attr('rel', 'stylesheet');
-    materialStylesheet.attr('href', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
-    $('head').append(materialStylesheet);
-    
-    // JavaScript
-    materialScripts = $('script');
-    materialScripts.attr('src', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
-    $('body').append(materialScripts);
-}
+$(modal).appendTo('html');
 
+var modalContent = $('<div></div>');
+modalContent.attr('class', 'modal-content');
+modalContent.attr('style', `
+width: 500px;
+height: 300px;
+background-color: white;
+border-radius: 7px;
+text-align: center;
+`);
 
-function setTimer() {
-    // TODO: Timer implementieren
-}
-
-function createContainer() {
-    const container = $('div')
-    container.attr('class', 'container')
-    $('body').append(container);
-}
-
-function createPopUp() {
-    popUpWindow = $('div');
-    popUpWindow.attr('class', 'card');
-    popUpWindow.css('width', '180rem')
-
-    content = $('p')
-    const contentString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    content.text(contentString)
-    popUpWindow.append()
-}
-
-function main() {
-    loadMaterializeCSS()
-    createContainer()
-}
-
-main()
+$(modalContent).appendTo(modal);
