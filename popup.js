@@ -1,3 +1,8 @@
+/* 
+* Social Media Pop-Up
+* Copyright © ICF Hamburg
+*/
+
 /* Modal-Hintergrund */
 var modalBackground = $('<div></div>');
 modalBackground.attr('class', 'modal-background');
@@ -42,7 +47,6 @@ right: 0.5rem;
 cursor: pointer;
 
 font-size: 2rem;
-font-weight: bold;
 text-decoration: none;
 color: black;
 
