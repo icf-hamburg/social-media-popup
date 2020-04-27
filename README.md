@@ -1,5 +1,7 @@
 # Social Media Pop-Up
 
+Demo [here]{https://icf-hamburg.github.io/social-media-popup/}.
+
 Embed Code:
 ```
 <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" onload="(function(d, script) {
