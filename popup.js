@@ -26,6 +26,8 @@ border-radius: 7px;
 max-width:30rem;
 text-align: center;
 
+font-family: 'Open Sans', sans-serif;
+
 padding: 1rem;
 padding-top: 10 rem;
 
@@ -53,7 +55,7 @@ transform: rotate(45deg);
 $(closeButton).appendTo(modalWindow);
 
 function openModal() {
-    $(modalBackground).appendTo('html');
+    $(modalBackground).appendTo('body');
 }
 
 /* Inhalte */
@@ -75,25 +77,19 @@ function createIcon(imageUrl, linkUrl) {
     $(iconContainer).appendTo(modalWindow);
 }
 
-loremIpsum = `
-    Lorem ipsum dolor sit amet, 
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-`
 function createTitle() {
     var text = $('<h3></h3>');
-    text.text('Sed ut perspiciatis');
+    text.text('Hey, du da!');
     $(text).appendTo(modalWindow);
 }
 
 function createText() {
     var text = $('<p></p>');
-    text.text(loremIpsum);
+    text.text('Schau dir gerne mal unsere sozialen Medien an 😃');
     $(text).appendTo(modalWindow);
 }
 
-setInterval(openModal, 5000);
+setTimeout(openModal, 5000);
 
 createIcon('icons/facebook.svg', 'https://www.facebook.com/icfhamburg/');
 createIcon('icons/instagram.svg', 'https://www.instagram.com/icfhamburg/');

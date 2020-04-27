@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="icons/icf.png"/>
     <style>
-        * { font-family: Arial; }
+        body, html {
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            overflow: hidden;
+        }
+        #icf-website {
+            position:absolute; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            top: 0px; 
+        }
     </style>
     <title>Social Media Pop-Up</title>
 </head>
 <body>
+    <iframe width="100%" height="100%" id="icf-website" src="https://www.icf.church/hamburg/" frameborder="0"></iframe>
+    
     <div class="scripts">
         <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" onload="(function(d, script) {
             /* 
