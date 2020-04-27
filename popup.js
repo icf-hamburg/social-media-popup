@@ -17,8 +17,6 @@ justify-content: center;
 align-items: center;
 `);
 
-$(modalBackground).appendTo('html');
-
 /* Modal-Popop-Fenster */
 var modalWindow = $('<div></div>');
 modalWindow.attr('class', 'modal-content');
@@ -53,6 +51,10 @@ color: black;
 transform: rotate(45deg);
 `);
 $(closeButton).appendTo(modalWindow);
+
+function openModal() {
+    $(modalBackground).appendTo('html');
+}
 
 /* Inhalte */
 function createIcon(imageUrl, linkUrl) {
@@ -91,6 +93,7 @@ function createText() {
     $(text).appendTo(modalWindow);
 }
 
+setInterval(openModal, 5000);
 
 createIcon('icons/facebook.svg', 'https://www.facebook.com/icfhamburg/');
 createIcon('icons/instagram.svg', 'https://www.instagram.com/icfhamburg/');
