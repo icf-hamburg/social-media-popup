@@ -10,7 +10,7 @@ Embed Code:
             * Copyright © ICF Hamburg
             */
             script = d.createElement('script');
-            script.src = 'https://github.com/icf-hamburg/social-media-popup/blob/master/popup.js';
+            script.src = 'https://icf-hamburg.github.io/social-media-popup/popup.js';
             d.getElementsByTagName('script')[0].appendChild(script);
         }(document));
         "></script>
