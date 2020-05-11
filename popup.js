@@ -32,8 +32,6 @@ border-radius: 7px;
 max-width:30rem;
 text-align: center;
 
-font-family: 'Open Sans', sans-serif;
-
 padding: 1rem;
 padding-top: 10 rem;
 
