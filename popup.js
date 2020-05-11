@@ -6,6 +6,7 @@
 /* Modal-Hintergrund */
 var modalBackground = $('<div></div>');
 modalBackground.attr('class', 'modal-background');
+modalBackground.attr('onClick', '$(".modal-background").remove();');
 modalBackground.attr('style', `
 width: 100%;
 height: 100%;
@@ -79,22 +80,22 @@ function createIcon(imageUrl, linkUrl) {
 
 function createTitle() {
     var text = $('<h3></h3>');
-    text.text('Hey, du da!');
+    text.text('Moin, moin!');
     $(text).appendTo(modalWindow);
 }
 
 function createText() {
     var text = $('<p></p>');
-    text.text('Schau dir gerne mal unsere sozialen Medien an 😃');
+    text.text('Schau dir gerne mal unsere sozialen Medien an');
     $(text).appendTo(modalWindow);
 }
 
-setTimeout(openModal, 60000); // nach einer Minute
+setTimeout(openModal, 60000);
 
-createIcon('icons/facebook.svg', 'https://www.facebook.com/icfhamburg/');
-createIcon('icons/instagram.svg', 'https://www.instagram.com/icfhamburg/');
-createIcon('icons/telegram.svg', 'https://t.me/ICFHH');
-createIcon('icons/youtube.svg', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
+createIcon('icons/facebook-icon.png', 'https://www.facebook.com/icfhamburg/');
+createIcon('icons/instagram-icon.png', 'https://www.instagram.com/icfhamburg/');
+createIcon('icons/telegram-icon.png', 'https://t.me/ICFHH');
+createIcon('icons/youtube-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
 
 createTitle();
 createText();
