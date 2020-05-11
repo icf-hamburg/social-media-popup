@@ -11,7 +11,7 @@ Embed Code:
             */
             script = d.createElement('script');
             script.src = 'https://icf-hamburg.github.io/social-media-popup/popup.js';
-            d.getElementsByTagName('script')[0].appendChild(script);
+            d.getElementsByTagName('body')[0].appendChild(script);
         }(document));
         "></script>
 ```
