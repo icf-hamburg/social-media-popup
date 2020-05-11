@@ -6,7 +6,12 @@
 /* Modal-Hintergrund */
 var modalBackground = $('<div></div>');
 modalBackground.attr('class', 'modal-background');
-modalBackground.attr('onClick', '$(".modal-background").remove();');
+modalBackground.click(function (e) { 
+    e.preventDefault();
+    if ($(e.target).is('.modal-background')) {
+        modalBackground.remove();
+    }
+});
 modalBackground.attr('style', `
 width: 100%;
 height: 100%;

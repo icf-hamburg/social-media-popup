@@ -6,7 +6,12 @@
 /* Modal-Hintergrund */
 var modalBackground = $('<div></div>');
 modalBackground.attr('class', 'modal-background');
-modalBackground.attr('onClick', '$(".modal-background").remove();');
+modalBackground.click(function (e) { 
+    e.preventDefault();
+    if ($(e.target).is('.modal-background')) {
+        modalBackground.remove();
+    }
+});
 modalBackground.attr('style', `
 width: 100%;
 height: 100%;
@@ -60,7 +65,7 @@ function openModal() {
 }
 
 /* Inhalte */
-function createIcon(imageUrl, linkUrl) {
+function createIcon(imageUrl, darkImageUrl, linkUrl) {
     var iconContainer = $('<a></a>');
     iconContainer.attr('href', linkUrl);
     iconContainer.attr('style', `
@@ -74,6 +79,14 @@ function createIcon(imageUrl, linkUrl) {
     margin: 10px;
     `);
 
+    socialMediaIcon.mouseenter(function() {
+        $(this).attr('src', darkImageUrl);
+    });
+
+    socialMediaIcon.mouseleave(function() {
+        $(this).attr('src', imageUrl);
+    });
+
     $(socialMediaIcon).appendTo(iconContainer);
     $(iconContainer).appendTo(modalWindow);
 }
@@ -86,16 +99,16 @@ function createTitle() {
 
 function createText() {
     var text = $('<p></p>');
-    text.text('Schau dir gerne mal unsere sozialen Medien an');
+    text.text('Schau dir gerne mal unsere sozialen Medien an!');
     $(text).appendTo(modalWindow);
 }
 
-setTimeout(openModal, 60000);
+setTimeout(openModal, 5000);
 
-createIcon('icons/facebook-icon.png', 'https://www.facebook.com/icfhamburg/');
-createIcon('icons/instagram-icon.png', 'https://www.instagram.com/icfhamburg/');
-createIcon('icons/telegram-icon.png', 'https://t.me/ICFHH');
-createIcon('icons/youtube-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
+createIcon('icons/facebook-icon.png', 'icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
+createIcon('icons/instagram-icon.png', 'icons/instagram-dark-icon.png', 'https://www.instagram.com/icfhamburg/');
+createIcon('icons/telegram-icon.png', 'icons/telegram-dark-icon.png', 'https://t.me/ICFHH');
+createIcon('icons/youtube-icon.png', 'icons/youtube-dark-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
 
 createTitle();
 createText();
