@@ -4,7 +4,7 @@ Demo [here](https://icf-hamburg.github.io/social-media-popup/).
 
 Embed Code:
 ```
-<script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" onload="(function(d, script) {
+<script src="jquery-3.5.0.slim.min.js" onload="(function(d, script) {
             /* 
             * Social Media Pop-Up
             * Copyright © ICF Hamburg
