@@ -65,7 +65,7 @@ transform: rotate(45deg);
 modalWindow.appendChild(closeButton);
 
 function openModal() {
-    document.getElementsByTagName('html')[0].appendChild(modalBackground);
+    document.body.appendChild(modalBackground);
 }
 
 /* Inhalte */
