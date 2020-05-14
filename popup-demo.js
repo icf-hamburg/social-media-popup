@@ -12,7 +12,6 @@ modalBackground.onclick = function(event) {
     }
 }
 
-console.log('Styling background...');
 modalBackground.style.cssText = `
 top:0; 
 display:flex; 
@@ -66,51 +65,47 @@ function openModal() {
 }
 
 /* Inhalte */
-// function createIcon(imageUrl, darkImageUrl, linkUrl) {
-//     var iconContainer = $('<a></a>');
-//     iconContainer.attr('href', linkUrl);
-//     iconContainer.attr('style', `
-//     text-decoration: none;
-//     `)
-    
-//     var socialMediaIcon = $('<img>');
-//     socialMediaIcon.attr('src', imageUrl);
-//     socialMediaIcon.attr('style', `
-//     width: 5rem;
-//     margin: 10px;
-//     `);
+function createIcon(imageUrl, darkImageUrl, linkUrl) {
+    var iconContainer = document.createElement('a')
+    iconContainer.setAttribute('href', linkUrl);
+    iconContainer.style.textDecoration = "none;";
 
-//     socialMediaIcon.mouseenter(function() {
-//         $(this).attr('src', darkImageUrl);
-//     });
+    var socialMediaIcon = document.createElement('img');
+    socialMediaIcon.setAttribute('src', imageUrl);
+    socialMediaIcon.style.cssText = `
+    width: 5rem;
+    margin: 10px;
+    `;
 
-//     socialMediaIcon.mouseleave(function() {
-//         $(this).attr('src', imageUrl);
-//     });
+    socialMediaIcon.addEventListener('mouseenter', e => {
+        socialMediaIcon.setAttribute('src', darkImage);
+        socialMediaIcon.setAttribute('src', imageUrl);
+    });
 
-//     $(socialMediaIcon).appendTo(iconContainer);
-//     $(iconContainer).appendTo(modalWindow);
-// }
+    iconContainer.appendChild(socialMediaIcon);
+    modalWindow.appendChild(iconContainer);
+}
 
-// function createTitle() {
-//     var text = $('<h3></h3>');
-//     text.text('Moin, moin!');
-//     $(text).appendTo(modalWindow);
-// }
+function createTitle() {
+    var text = document.createElement('h3');
+    text.innerHTML = 'Moin, moin!';
+    modalWindow.appendChild(text);
+}
 
-// function createText() {
-//     var text = $('<p></p>');
-//     text.text('Schau dir gerne mal unsere sozialen Medien an!');
-//     $(text).appendTo(modalWindow);
-// }
+function createText() {
+    var text = document.createElement('p');
+    text.innerHTML = 'Schau dir gerne mal unsere sozialen Medien an!';
+    modalWindow.appendChild(text);
+}
 
 //setTimeout(openModal, 5000);
 openModal();
 
-// createIcon('icons/facebook-icon.png', 'icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
-// createIcon('icons/instagram-icon.png', 'icons/instagram-dark-icon.png', 'https://www.instagram.com/icfhamburg/');
-// createIcon('icons/telegram-icon.png', 'icons/telegram-dark-icon.png', 'https://t.me/ICFHH');
-// createIcon('icons/youtube-icon.png', 'icons/youtube-dark-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
+/* Layout Generieren */ 
+createIcon('icons/facebook-icon.png', 'icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
+createIcon('icons/instagram-icon.png', 'icons/instagram-dark-icon.png', 'https://www.instagram.com/icfhamburg/');
+createIcon('icons/telegram-icon.png', 'icons/telegram-dark-icon.png', 'https://t.me/ICFHH');
+createIcon('icons/youtube-icon.png', 'icons/youtube-dark-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
 
-// createTitle();
-// createText();
+createTitle();
+createText();
