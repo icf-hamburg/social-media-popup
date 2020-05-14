@@ -91,6 +91,7 @@ function createIcon(imageUrl, darkImageUrl, linkUrl) {
 
 function createTitle() {
     var text = document.createElement('h3');
+    text.style.marginTop = '5px';
     text.innerHTML = 'Moin, moin!';
     modalWindow.appendChild(text);
 }
