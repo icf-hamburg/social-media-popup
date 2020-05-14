@@ -102,10 +102,10 @@ function createText() {
 openModal();
 
 /* Layout Generieren */ 
-createIcon('icons/facebook-icon.png', 'icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
-createIcon('icons/instagram-icon.png', 'icons/instagram-dark-icon.png', 'https://www.instagram.com/icfhamburg/');
-createIcon('icons/telegram-icon.png', 'icons/telegram-dark-icon.png', 'https://t.me/ICFHH');
-createIcon('icons/youtube-icon.png', 'icons/youtube-dark-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
+createIcon('https://icf-hamburg.github.io/social-media-popup/icons/facebook-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
+createIcon('https://icf-hamburg.github.io/social-media-popup/icons/instagram-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/instagram-dark-icon.png', 'https://www.instagram.com/icfhamburg/');
+createIcon('https://icf-hamburg.github.io/social-media-popup/icons/telegram-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/telegram-dark-icon.png', 'https://t.me/ICFHH');
+createIcon('https://icf-hamburg.github.io/social-media-popup/icons/youtube-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/youtube-dark-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
 
 createTitle();
 createText();
