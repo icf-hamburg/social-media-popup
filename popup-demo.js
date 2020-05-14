@@ -6,8 +6,10 @@
 /* Modal-Hintergrund */
 var modalBackground = document.createElement('div');
 modalBackground.setAttribute('class', 'modal-background');
-modalBackground.onclick = function() {
-    modalBackground.remove();
+modalBackground.onclick = function(event) {
+    if(event.target == modalBackground) {
+        modalBackground.remove();
+    }
 }
 
 console.log('Styling background...');
@@ -22,39 +24,42 @@ background-color: rgba(0, 0, 0, 0.7);
 position: absolute;`;
 
 /* Modal-Popop-Fenster */
-// var modalWindow = $('<div></div>');
-// modalWindow.attr('class', 'modal-content');
-// modalWindow.attr('style', `
-// background-color: white;
-// border-radius: 7px;
-// max-width:30rem;
-// text-align: center;
+var modalWindow = document.createElement('div');
+modalWindow.setAttribute('class', 'modal-content');
+modalWindow.style.cssText = `
+background-color: white;
+border-radius: 7px;
+max-width: 30rem;
+text-align: center;
 
-// padding: 1rem;
-// padding-top: 10 rem;
+padding: 1rem;
+padding-top: 10 rem;
 
-// position: relative;
-// `);
+position: relative;
+`;
 
-// $(modalWindow).appendTo(modalBackground);
+modalBackground.appendChild(modalWindow);
 
-// /* Button zum Schließen */
-// var closeButton = $('<a>+</a>');
-// closeButton.attr('class', 'modal-close');
-// closeButton.attr('onClick', '$(".modal-background").remove();');
-// closeButton.attr('style', `
-// position: absolute;
-// top: 0;
-// right: 0.5rem;
-// cursor: pointer;
+/* Button zum Schließen */
+var closeButton = document.createElement('a');
+closeButton.innerHTML = '+';
+closeButton.setAttribute('class', 'modal-close');
+closeButton.onclick = modalBackground.remove();
 
-// font-size: 2rem;
-// text-decoration: none;
-// color: black;
+closeButton.style.cssText = `
+position: absolute;
+top: 0;
+right: 0.5rem;
+cursor: pointer;
 
-// transform: rotate(45deg);
-// `);
-// $(closeButton).appendTo(modalWindow);
+font-size: 2rem;
+text-decoration: none;
+color: black;
+
+transform: rotate(45deg);
+`;
+
+modalWindow.appendChild(closeButton);
 
 function openModal() {
     document.body.appendChild(modalBackground);
