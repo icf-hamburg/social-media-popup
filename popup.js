@@ -79,6 +79,9 @@ function createIcon(imageUrl, darkImageUrl, linkUrl) {
 
     socialMediaIcon.addEventListener('mouseenter', e => {
         socialMediaIcon.setAttribute('src', darkImage);
+    });
+
+    socialMediaIcon.addEventListener('mouseleave', e => {
         socialMediaIcon.setAttribute('src', imageUrl);
     });
 
