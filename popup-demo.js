@@ -20,7 +20,8 @@ align-items: center;
 width: 100%; 
 height: 100%; 
 background-color: rgba(0, 0, 0, 0.7); 
-position: absolute;`;
+position: absolute;
+`;
 
 /* Modal-Popop-Fenster */
 var modalWindow = document.createElement('div');
@@ -64,7 +65,7 @@ transform: rotate(45deg);
 modalWindow.appendChild(closeButton);
 
 function openModal() {
-    document.body.appendChild(modalBackground);
+    document.getElementsByTagName('html')[0].appendChild(modalBackground);
 }
 
 /* Inhalte */
