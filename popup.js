@@ -105,8 +105,7 @@ function createText() {
     modalWindow.appendChild(text);
 }
 
-//setTimeout(openModal, 5000);
-openModal();
+setTimeout(openModal, 60000);
 
 /* Layout Generieren */ 
 createIcon('https://icf-hamburg.github.io/social-media-popup/icons/facebook-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');

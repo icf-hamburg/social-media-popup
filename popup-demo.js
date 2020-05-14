@@ -105,7 +105,6 @@ function createText() {
     modalWindow.appendChild(text);
 }
 
-//setTimeout(openModal, 5000);
 openModal();
 
 /* Layout Generieren */ 
