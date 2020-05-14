@@ -44,6 +44,7 @@ var closeButton = document.createElement('a');
 closeButton.innerHTML = '+';
 closeButton.setAttribute('class', 'modal-close');
 closeButton.onclick = function(event) {
+    event.preventDefault();
     modalBackground.remove();
 }
 
