@@ -94,7 +94,7 @@ function createTitle() {
 
 function createText() {
     var text = document.createElement('p');
-    text.innerHTML = 'Schau dir gerne mal unsere sozialen Medien an!';
+    text.innerHTML = 'Willst du uns noch besser kennenlernen? Dann schau bei unseren sozialen Medien vorbei.';
     modalWindow.appendChild(text);
 }
 
