@@ -43,7 +43,9 @@ modalBackground.appendChild(modalWindow);
 var closeButton = document.createElement('a');
 closeButton.innerHTML = '+';
 closeButton.setAttribute('class', 'modal-close');
-closeButton.onclick = modalBackground.remove();
+closeButton.onclick = function(event) {
+    modalBackground.remove();
+}
 
 closeButton.style.cssText = `
 position: absolute;
