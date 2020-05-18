@@ -20,7 +20,7 @@ align-items: center;
 width: 100%; 
 height: 100%; 
 background-color: rgba(0, 0, 0, 0.7); 
-position: absolute;`;
+position: fixed;`;
 
 /* Modal-Popop-Fenster */
 var modalWindow = document.createElement('div');
