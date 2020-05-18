@@ -20,7 +20,7 @@ align-items: center;
 width: 100%; 
 height: 100%; 
 background-color: rgba(0, 0, 0, 0.7); 
-position: absolute;`;
+position: fixed;`;
 
 /* Modal-Popop-Fenster */
 var modalWindow = document.createElement('div');
@@ -105,7 +105,7 @@ function createText() {
     modalWindow.appendChild(text);
 }
 
-setTimeout(openModal, 60000);
+setTimeout(openModal, 1);
 
 /* Layout Generieren */ 
 createIcon('https://icf-hamburg.github.io/social-media-popup/icons/facebook-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
