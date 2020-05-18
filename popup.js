@@ -20,7 +20,9 @@ align-items: center;
 width: 100%; 
 height: 100%; 
 background-color: rgba(0, 0, 0, 0.7); 
-position: fixed;`;
+position: fixed;
+z-index: 10;
+`;
 
 /* Modal-Popop-Fenster */
 var modalWindow = document.createElement('div');
@@ -35,6 +37,7 @@ padding: 1rem;
 padding-top: 10 rem;
 
 position: relative;
+z-index: 11;
 `;
 
 modalBackground.appendChild(modalWindow);
@@ -59,6 +62,7 @@ text-decoration: none;
 color: black;
 
 transform: rotate(45deg);
+z-index: 12;
 `;
 
 modalWindow.appendChild(closeButton);
@@ -78,6 +82,7 @@ function createIcon(imageUrl, darkImageUrl, linkUrl) {
     socialMediaIcon.style.cssText = `
     width: 5rem;
     margin: 10px;
+    z-index: 12;
     `;
 
     socialMediaIcon.addEventListener('mouseenter', e => {
