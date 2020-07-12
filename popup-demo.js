@@ -68,7 +68,38 @@ z-index: 12;
 modalWindow.appendChild(closeButton);
 
 function openModal() {
-    document.body.appendChild(modalBackground);
+    if (!cookieSet()) {
+        writeCookie();
+        document.body.appendChild(modalBackground);
+    }
+}
+
+function writeCookie() {
+    // Sets cookie with an expiration date 6 months in the future
+
+    var now = new Date();
+    now.setMonth( now.getMonth() + 6);
+    
+    document.cookie = "popupShown=true";
+    document.cookie = "expires=" + now.toUTCString() + ";"
+}
+
+function deleteCookie(name) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+function cookieSet() {
+    // Creates object out of cookie string and checks for cookie, returning a boolean
+    var cookies = document.cookie
+    .split(';')
+    .map(cookie => cookie.split('='))
+    .reduce((accumulator, [key, value]) => 
+        ({...accumulator, [key.trim()]: decodeURIComponent(value)}), 
+    {});
+
+    if (cookies.popupShown == "true") {
+        return true;
+    } else return false;
 }
 
 /* Inhalte */
@@ -110,7 +141,7 @@ function createText() {
     modalWindow.appendChild(text);
 }
 
-openModal();
+openModal(); // Demo only
 
 /* Layout Generieren */ 
 createIcon('icons/facebook-icon.png', 'icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
