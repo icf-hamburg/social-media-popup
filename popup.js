@@ -77,15 +77,17 @@ function openModal() {
 function writeCookie() {
     // Sets cookie with an expiration date 6 months in the future
 
-    var now = new Date();
+    let now = new Date();
     now.setMonth( now.getMonth() + 6);
+
+    let key = 'popupShown'
+    let value = 'true'
     
-    document.cookie = "popupShown=true";
-    document.cookie = "expires=" + now.toUTCString() + ";"
+    document.cookie = `${key}=${value};path=/;expires=${now.toUTCString()}`;
 }
 
 function deleteCookie(name) {
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = `${name}=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 }
 
 function cookieSet() {
