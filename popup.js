@@ -105,9 +105,11 @@ function cookieSet() {
 }
 
 /* Inhalte */
-function createIcon(imageUrl, darkImageUrl, linkUrl) {
+function createIcon(buttonId, imageUrl, darkImageUrl, linkUrl) {
     var iconContainer = document.createElement('a')
     iconContainer.setAttribute('href', linkUrl);
+    iconContainer.setAttribute('id', buttonId);
+    iconContainer.setAttribute('class', 'social-media-button');
     iconContainer.style.textDecoration = "none;";
 
     var socialMediaIcon = document.createElement('img');
@@ -146,10 +148,10 @@ function createText() {
 setTimeout(openModal, 40000);
 
 /* Layout Generieren */ 
-createIcon('https://icf-hamburg.github.io/social-media-popup/icons/facebook-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
-createIcon('https://icf-hamburg.github.io/social-media-popup/icons/instagram-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/instagram-dark-icon.png', 'https://www.instagram.com/icfhamburg/');
-createIcon('https://icf-hamburg.github.io/social-media-popup/icons/telegram-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/telegram-dark-icon.png', 'https://t.me/ICFHH');
-createIcon('https://icf-hamburg.github.io/social-media-popup/icons/youtube-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/youtube-dark-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
+createIcon('popup-facebook-button', 'https://icf-hamburg.github.io/social-media-popup/icons/facebook-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/facebook-dark-icon.png', 'https://www.facebook.com/icfhamburg/');
+createIcon('popup-instagram-button', 'https://icf-hamburg.github.io/social-media-popup/icons/instagram-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/instagram-dark-icon.png', 'https://www.instagram.com/icfhamburg/');
+createIcon('popup-telegram-button', 'https://icf-hamburg.github.io/social-media-popup/icons/telegram-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/telegram-dark-icon.png', 'https://t.me/ICFHH');
+createIcon('popup-youtube-button', 'https://icf-hamburg.github.io/social-media-popup/icons/youtube-icon.png', 'https://icf-hamburg.github.io/social-media-popup/icons/youtube-dark-icon.png', 'https://www.youtube.com/channel/UC89iSG16TeT75MUNCQS3iag');
 
 createTitle();
 createText();
